@@ -6,7 +6,7 @@ $errors = [];
 if (
     $_SERVER['REQUEST_METHOD'] === 'POST'
 ) {
-    $login = trim(filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING));
+    $login = trim(filter_input(INPUT_POST, 'login'));
     $password = $_POST['password'] ?? '';
 
 
@@ -47,8 +47,8 @@ if (
 <?php endif; ?>
 <?php if ($errors): ?>
 <div class="alert">
-<?php foreach ($errors as $e): ?>
-<div>- <?php echo htmlspecialchars($e); ?></div>
+<?php foreach ($errors as $error): ?>
+<div>- <?php echo htmlspecialchars($error); ?></div>
 <?php endforeach; ?>
 </div>
 <?php endif; ?>
