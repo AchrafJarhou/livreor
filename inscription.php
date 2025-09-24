@@ -6,7 +6,7 @@ if (
     $_SERVER['REQUEST_METHOD'] === 'POST'
 ) {
     $login = trim(
-        filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING)
+        filter_input(INPUT_POST, 'login')
     );
     $password = $_POST['password'] ?? '';
     $password_confirm = $_POST['password_confirm'] ?? '';
